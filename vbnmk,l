@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
 <head>
 <title>HTML try</title>
 </head>
 <body>
 <p> Hello world</p>
-<p> I need mental sTtability </p>
-<h1> HELP </h1>
+<p title="you can hover over something and do something"> I need mental sTtability </p>
+<h1 title="this is a title"> HELP </h1>
 <h2> HELP </h2>
 <h3> HELP </h3>
 <h4> HELP </h4>
@@ -14,6 +14,19 @@
 <h6> HELP </h6>
 <a href="https://github.com/someperson6/photo-album/new/main">This is a link</a>
 <img src="img_girl.jpg" alt="Pumpkin spice latte" width="100" height="30">
+<a href="https://google.com" title="Hello oreo pumpkin pie cake"> Click me for free robux</a>
+<h1 title="This is my essay">Another unique example of heroism is Wangari Maathai, who was the first African woman to receive a Nobel Prize. After getting a doctorate she started an organization bringing people in Kenya together to plant more trees, and slow the desertification of her country. In that same organization she made, they established another one to spread their message to the world leaders. She also supported other issues and fought against them, like human rights, aids, and women's rights. </h1>
+<p title="Hello"> '"Joe biden is the oldest president in US history, however donald trump may surprass that if he gets re-elected" Said some random guy in an interview'</p>
+
+
+
+
+
+
+
+
+
+
 
 
 
