@@ -5,6 +5,10 @@
 </head>
 <body>
 <p> Hello world</p>
+<p> h1-h6 are different sizes of headers </p>
+<p> use the title command to put something when you hover over it, title=... </p>
+<p> use a href=URL to put hyperlinks </p>
+<p> Use img src=URL for image, alt=TEXT for extra text, and width height=commands </p>
 <p title="you can hover over something and do something"> I need mental sTtability </p>
 <h1 title="this is a title"> HELP </h1>
 <h2> HELP </h2>
@@ -17,8 +21,25 @@
 <a href="https://google.com" title="Hello oreo pumpkin pie cake"> Click me for free robux</a>
 <h1 title="This is my essay">Another unique example of heroism is Wangari Maathai, who was the first African woman to receive a Nobel Prize. After getting a doctorate she started an organization bringing people in Kenya together to plant more trees, and slow the desertification of her country. In that same organization she made, they established another one to spread their message to the world leaders. She also supported other issues and fought against them, like human rights, aids, and women's rights. </h1>
 <p title="Hello"> '"Joe biden is the oldest president in US history, however donald trump may surprass that if he gets re-elected" Said some random guy in an interview'</p>
-
-
+<h1> </h1>
+<p> That was a space </p>
+<hr>
+<br>
+<p> Those are hr and br thingies, hr for line, br for line break </p>
+<p> Line <br> break </p>
+<p style="color:red; font-size:80px;"> I am really big and red <br> I just used br and am about to use hr, i used font-size:80px and color:red </p>
+<h1 style="background-color:powderblue;">This is a heading, not style font size with background color <br> use background-color:powderblue; :O</h1>
+<p style="font-family:courier;">font-family:courier moment</p>
+<b> - bold </b>
+<strong> - Important text </strong>
+<i> - Italic text </i>
+<em> - Emphasized text </em>
+<mark> - Marked text </mark>
+<small> - Smaller text </small>
+<del> - Deleted text </del>
+<ins> - Inserted text </ins>
+<sub> - Subscript text </sub>
+<sup> - Superscript text </sup>
 
 
 
