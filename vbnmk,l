@@ -73,7 +73,8 @@ Use the CSS font-family property for text fonts
 Use the CSS font-size property for text sizes
 Use the CSS border property for borders
 Use the CSS padding property for space inside the border
-Use the CSS margin property for space outside the border -->
+Use the CSS margin property for space outside the border
+-->
 
 <h2>Absolute URLs</h2>
 <p><a href="https://www.w3.org/" target="_blank">W3C</a></p>
@@ -93,7 +94,8 @@ Use the CSS margin property for space outside the border -->
 Use the href attribute to define the link address
 Use the target attribute to define where to open the linked document
 Use the <img> element (inside <a>) to use an image as a link
-Use the mailto: scheme inside the href attribute to create a link that opens the user's email program -->
+Use the mailto: scheme inside the href attribute to create a link that opens the user's email program 
+-->
 
 
 
