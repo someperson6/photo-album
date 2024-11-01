@@ -4,6 +4,10 @@
 <title>HTML try</title>
 </head>
 <body>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+
 <p> Hello world</p>
 <p> h1-h6 are different sizes of headers </p>
 <p> use the title command to put something when you hover over it, title=... </p>
