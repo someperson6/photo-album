@@ -3,20 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackjack Game</title>
+    <title>Casino Games</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             text-align: center;
-            background-color: #2c3e50;
-            color: white;
         }
-        #game {
-            margin: 20px auto;
+        .game {
+            margin: 20px;
             padding: 20px;
-            border: 2px solid #ecf0f1;
-            display: inline-block;
-            background-color: #34495e;
+            border: 2px solid #333;
+            background-color: #fff;
         }
         button {
             padding: 10px 20px;
@@ -26,136 +24,59 @@
     </style>
 </head>
 <body>
-    <div id="game">
-        <h1>Blackjack</h1>
-        <div id="player-hand"></div>
-        <div id="dealer-hand"></div>
-        <h2 id="message"></h2>
-        <button id="hit">Hit</button>
-        <button id="stand">Stand</button>
-        <button id="restart" style="display:none;">Restart</button>
+    <h1>Casino Games</h1>
+
+    <div class="game" id="blackjack">
+        <h2>Blackjack</h2>
+        <button onclick="startBlackjack()">Play Blackjack</button>
+        <div id="blackjack-result"></div>
+    </div>
+
+    <div class="game" id="slots">
+        <h2>Slots</h2>
+        <button onclick="playSlots()">Play Slots</button>
+        <div id="slots-result"></div>
+    </div>
+
+    <div class="game" id="roulette">
+        <h2>Roulette</h2>
+        <button onclick="playRoulette()">Play Roulette</button>
+        <div id="roulette-result"></div>
+    </div>
+
+    <div class="game" id="cookie-clicker">
+        <h2>Mini Cookie Clicker</h2>
+        <button onclick="clickCookie()">Click Cookie</button>
+        <div id="cookie-count">Cookies: 0</div>
     </div>
 
     <script>
-        const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
-        let deck = [];
-        let playerHand = [];
-        let dealerHand = [];
-        let playerScore = 0;
-        let dealerScore = 0;
-
-        function createDeck() {
-            for (let suit of suits) {
-                for (let value of values) {
-                    deck.push({ suit, value });
-                }
-            }
-            deck = deck.sort(() => Math.random() - 0.5);
+        // Blackjack Game
+        function startBlackjack() {
+            // Basic Blackjack logic here
+            document.getElementById('blackjack-result').innerText = 'Blackjack game started! (Implement game logic)';
         }
 
-        function dealCard(hand) {
-            hand.push(deck.pop());
+        // Slots Game
+        function playSlots() {
+            // Basic Slots logic here
+            const result = Math.random() < 0.5 ? 'You Win!' : 'You Lose!';
+            document.getElementById('slots-result').innerText = result;
         }
 
-        function calculateScore(hand) {
-            let score = 0;
-            let aces = 0;
-            for (let card of hand) {
-                if (card.value === 'A') {
-                    aces++;
-                    score += 11;
-                } else if (['K', 'Q', 'J'].includes(card.value)) {
-                    score += 10;
-                } else {
-                    score += parseInt(card.value);
-                }
-            }
-            while (score > 21 && aces) {
-                score -= 10;
-                aces--;
-            }
-            return score;
+        // Roulette Game
+        function playRoulette() {
+            // Basic Roulette logic here
+            const number = Math.floor(Math.random() * 36);
+            document.getElementById('roulette-result').innerText = 'Roulette landed on: ' + number;
         }
 
-        function updateDisplay() {
-            document.getElementById('player-hand').innerText = 'Player Hand: ' + playerHand.map(card => card.value + ' of ' + card.suit).join(', ') + ' (Score: ' + playerScore + ')';
-            document.getElementById('dealer-hand').innerText = 'Dealer Hand: ' + dealerHand.map(card => card.value + ' of ' + card.suit).join(', ') + ' (Score: ' + dealerScore + ')';
+        // Mini Cookie Clicker
+        let cookieCount = 0;
+        function clickCookie() {
+            cookieCount++;
+            document.getElementById('cookie-count').innerText = 'Cookies: ' + cookieCount;
         }
-
-        function checkGameOver() {
-            if (playerScore > 21) {
-                document.getElementById('message').innerText = 'You bust! Dealer wins!';
-                endGame();
-            } else if (dealerScore > 21) {
-                document.getElementById('message').innerText = 'Dealer busts! You win!';
-                endGame();
-            } else if (playerScore === 21) {
-                document.getElementById('message').innerText = 'Blackjack! You win!';
-                endGame();
-            }
-        }
-
-        function dealerPlay() {
-            while (dealerScore < 17) {
-                dealCard(dealerHand);
-                dealerScore = calculateScore(dealerHand);
-            }
-            updateDisplay();
-            if (dealerScore > 21) {
-                document.getElementById('message').innerText = 'Dealer busts! You win!';
-            } else if (dealerScore > playerScore) {
-                document.getElementById('message').innerText = 'Dealer wins!';
-            } else if (dealerScore < playerScore) {
-                document.getElementById('message').innerText = 'You win!';
-            } else {
-                document.getElementById('message').innerText = 'It\'s a tie!';
-            }
-            endGame();
-        }
-
-        function endGame() {
-            document.getElementById('hit').disabled = true;
-            document.getElementById('stand').disabled = true;
-            document.getElementById('restart').style.display = 'inline';
-        }
-
-        function restartGame() {
-            deck = [];
-            playerHand = [];
-            dealerHand = [];
-            playerScore = 0;
-            dealerScore = 0;
-            document.getElementById('message').innerText = '';
-            createDeck();
-            dealCard(playerHand);
-            dealCard(playerHand);
-            dealCard(dealerHand);
-            dealCard(dealerHand);
-            playerScore = calculateScore(playerHand);
-            dealerScore = calculateScore(dealerHand);
-            updateDisplay();
-            document.getElementById('hit').disabled = false;
-            document.getElementById('stand').disabled = false;
-            document.getElementById('restart').style.display = 'none';
-        }
-
-        document.getElementById('hit').addEventListener('click', () => {
-            dealCard(playerHand);
-            playerScore = calculateScore(playerHand);
-            updateDisplay();
-            checkGameOver();
-        });
-
-        document.getElementById('stand').addEventListener('click', () => {
-            dealerPlay();
-        });
-
-        document.getElementById('restart').addEventListener('click', restartGame);
-
-        // Start the game
-        createDeck();
-        restartGame();
     </script>
 </body>
 </html>
